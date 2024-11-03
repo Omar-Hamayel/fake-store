@@ -1,0 +1,36 @@
+@import './base.css';
+body{
+    height: 2000px;
+}
+.container{
+    padding-top: 100px;
+}
+.categories .row{
+    gap: 40px;
+}
+.category{
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   padding: 30px;
+   width: 500px;
+   text-align: center;
+}
+.products .row{
+    gap: 50px;
+}
+
+.products .product{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+}
+.products .title{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+.products .title h1{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    font-size: 100px;
+}
