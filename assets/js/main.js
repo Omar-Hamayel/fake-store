@@ -7,7 +7,6 @@
   const showCategories = async () => {
     document.querySelector(".loader-container").classList.add("active")
     const categories = await getCategories();
-    console.log(categories)
     document.querySelector(".categories .container .row").innerHTML= categories.map((category) =>{
         return `
         <a class='category' href="categoryDetails.html?category=${category}">
@@ -28,16 +27,16 @@
     try{
     const product = await getProducts(page);
     const numOfPages = Math.ceil((product.total)/10);
-    document.querySelector(".products .container .row").innerHTML=product.products.map((product)=>{
-      return`
-      <div class = product>
+    console.log(product.products)
+    document.querySelector(".products .container .row").innerHTML=product.products.map ((product)=>{
+      return `
+      <a class = product href="details.html?id=${product.id}">
+      <img src="${product.thumbnail}"/>
       <h2>${product.title}</h2>
       <p>${product.price}</p>
-      <img src="${product.thumbnail}"/>
-      </div>
-      
-      `
-    }).join("");
+      </a>
+    `  
+  }).join("");
     let paginationList = ``
     if(page == 1){
       paginationList += `<li class="page-item"><button disabled class="page-link" href="#">&laquo;</button></li>`

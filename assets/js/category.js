@@ -3,7 +3,6 @@ const getProducts = async()=>{
    const params= new URLSearchParams(window.location.search).get('category');
    console.log(params)
     const {data} = await axios.get(`https://dummyjson.com/products/category/${params}`)
-    console.log(data)
     return data
 }
 const showProducts = async () =>{
